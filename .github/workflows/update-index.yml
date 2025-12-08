@@ -5,6 +5,9 @@ on:
     paths:
       - 'mods/**'
 
+permissions:
+  contents: write
+
 jobs:
   update-index:
     runs-on: ubuntu-latest
@@ -29,6 +32,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to index.json"
           else
-            git commit -m "Updated index.json with new mods"
+            git commit -m "Workflow updated index.json with new mods"
             git push
           fi
