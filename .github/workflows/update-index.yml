@@ -1,12 +1,11 @@
 name: Update Index on Merge
+permissions:
+  contents: write
 on:
   push:
     branches: [main]
     paths:
       - 'mods/**'
-
-permissions:
-  contents: write
 
 jobs:
   update-index:
