@@ -23,11 +23,10 @@ def update_index():
                 
                 mod_id = mod_data.get("id")
                 if mod_id:
-                    expected_dir = mod_id.replace('.', '/')
-                    if item == expected_dir.split('/')[-1]:
+                    if item == mod_id:
                         mod_ids.append(mod_id)
                     else:
-                        print(f"Warning: Directory '{item}' doesn't match ID '{mod_id}'")
+                        print(f"Warning: Directory name '{item}' should match mod ID '{mod_id}'")
                 else:
                     print(f"Missing 'id' field in {mod_json_path}")
                     
